@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<GridPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="700.0" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="englishapp.HomeController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: white;">
+         <children>
+            <ImageView fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" styleClass="imageView">
+               <image>
+                  <Image url="@../images/toeic.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </VBox>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: gray;" GridPane.columnIndex="1">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="titletext" text="TOEIC grammar" textAlignment="CENTER">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin></Text>
+            <Label fx:id="datePicker" styleClass="labeltext" text="Date" textAlignment="CENTER">
+               <padding>
+                  <Insets bottom="5.0" top="5.0" />
+               </padding></Label>
+            <Label fx:id="timePicker" styleClass="labeltext" text="Time" />
+         </children>
+      </VBox>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: gray;" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+         <children>
+            <ImageView fx:id="imgGrammar" fitHeight="100.0" fitWidth="100.0" onMouseClicked="#handleAction" pickOnBounds="true" preserveRatio="true" styleClass="imageView">
+               <image>
+                  <Image url="@../images/grammar.png" />
+               </image>
+            </ImageView>
+            <Label styleClass="labelImage" text="Grammar" />
+         </children>
+      </VBox>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+         <children>
+            <ImageView fx:id="imgAudio" fitHeight="100.0" fitWidth="100.0" onMouseClicked="#handleAction" pickOnBounds="true" preserveRatio="true" styleClass="imageView">
+               <image>
+                  <Image url="@../images/audio.png" />
+               </image>
+            </ImageView>
+            <Label styleClass="labelImage" text="Audio" />
+         </children>
+      </VBox>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="3">
+         <children>
+            <ImageView fx:id="imgPicture" fitHeight="100.0" fitWidth="100.0" onMouseClicked="#handleAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/image2.png" />
+               </image>
+            </ImageView>
+            <Label styleClass="labelImage" text="Picture" />
+         </children>
+      </VBox>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: gray;" GridPane.columnIndex="1" GridPane.rowIndex="3">
+         <children>
+            <ImageView fx:id="imgSetting" fitHeight="100.0" fitWidth="100.0" onMouseClicked="#handleAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/setting.png" />
+               </image></ImageView>
+            <Label styleClass="labelImage" text="Setting" />
+         </children>
+      </VBox>
+      <Separator prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+      <Separator prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="4" />
+      <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="5">
+         <children>
+            <Label fx:id="lblName" styleClass="labeltext" text="name" />
+         </children>
+         <GridPane.margin>
+            <Insets left="10.0" />
+         </GridPane.margin>
+      </VBox>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+         <children>
+            <ImageView fx:id="imgExit" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#handleAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons8_Exit_32px.png" />
+               </image>
+            </ImageView>
+         </children>
+      </VBox>
+   </children>
+</GridPane>

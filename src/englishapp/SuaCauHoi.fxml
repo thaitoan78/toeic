@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="758.0" prefWidth="1320.0" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="englishapp.SuaCauHoiController">
+   <children>
+      <SplitPane dividerPositions="0.36397748592870544" prefHeight="758.0" prefWidth="1320.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="819.0" prefWidth="474.0">
+               <children>
+                  <GridPane prefHeight="722.0" prefWidth="450.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="253.0" minWidth="5.0" prefWidth="139.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="248.0" minWidth="0.0" prefWidth="139.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="198.0" minWidth="10.0" prefWidth="142.0" />
+                        <ColumnConstraints />
+                        <ColumnConstraints />
+                        <ColumnConstraints />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <JFXTextField fx:id="txtCauHoi" labelFloat="true" promptText="Enter question" GridPane.columnSpan="3" />
+                        <JFXTextField fx:id="txtA" labelFloat="true" promptText="Answer A" GridPane.columnSpan="3" GridPane.rowIndex="4" />
+                        <JFXTextField fx:id="txtB" labelFloat="true" promptText="Answer B" GridPane.columnSpan="3" GridPane.rowIndex="6" />
+                        <JFXTextField fx:id="txtC" labelFloat="true" promptText="Answer C" GridPane.columnSpan="3" GridPane.rowIndex="8" />
+                        <JFXTextField fx:id="txtD" labelFloat="true" promptText="Answer D" GridPane.columnSpan="3" GridPane.rowIndex="10" />
+                        <JFXTextField fx:id="txtDapAn" labelFloat="true" prefHeight="26.0" prefWidth="194.0" promptText="Correct Answer" GridPane.columnSpan="3" GridPane.rowIndex="12" />
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0" visible="false" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
+                        <JFXButton fx:id="btnUpdate" onAction="#handleButton" prefHeight="40.0" prefWidth="91.0" text="UPDATE" textAlignment="JUSTIFY" GridPane.columnSpan="6" GridPane.halignment="LEFT" GridPane.rowIndex="14">
+                           <GridPane.margin>
+                              <Insets left="30.0" />
+                           </GridPane.margin></JFXButton>
+                        <JFXButton fx:id="btnReset" onAction="#handleButton" prefHeight="40.0" prefWidth="77.0" text="RESET" GridPane.columnIndex="1" GridPane.columnSpan="5" GridPane.rowIndex="14">
+                           <GridPane.margin>
+                              <Insets left="30.0" />
+                           </GridPane.margin></JFXButton>
+                        <JFXButton fx:id="btnBack" onAction="#handleButton" prefHeight="40.0" prefWidth="74.0" text="BACK" GridPane.columnIndex="2" GridPane.columnSpan="4" GridPane.rowIndex="14">
+                           <GridPane.margin>
+                              <Insets left="30.0" />
+                           </GridPane.margin></JFXButton>
+                        <Label id="err" fx:id="errCauHoi" styleClass="err" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label id="err" fx:id="errCombobox" styleClass="err" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label id="err" fx:id="errA" styleClass="err" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <Label id="err" fx:id="errB" styleClass="err" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                        <Label id="err" fx:id="errC" styleClass="err" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                        <Label id="err" fx:id="errD" styleClass="err" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+                        <Label id="err" fx:id="errDapAn" prefHeight="17.0" prefWidth="131.0" styleClass="err" GridPane.columnIndex="1" GridPane.rowIndex="13" />
+                        <ComboBox fx:id="cmbType" prefHeight="26.0" prefWidth="287.0" promptText="Choose type question" GridPane.columnSpan="3" GridPane.rowIndex="2" />
+                     </children>
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                  </GridPane>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="696.0" prefWidth="789.0">
+               <children>
+                  <TableView fx:id="tableView" layoutX="7.0" prefHeight="421.0" prefWidth="817.0">
+                    <columns>
+                      <TableColumn fx:id="colId" prefWidth="45.0" resizable="false" text="No" />
+                      <TableColumn fx:id="colCauHoi" prefWidth="373.0" resizable="false" text="Content" />
+                        <TableColumn fx:id="colA" prefWidth="76.0" resizable="false" text="A" />
+                        <TableColumn fx:id="colB" prefWidth="75.0" resizable="false" text="B" />
+                        <TableColumn fx:id="colC" prefWidth="62.0" resizable="false" text="C" />
+                        <TableColumn fx:id="colD" prefWidth="66.0" resizable="false" text="D" />
+                        <TableColumn fx:id="colDapAn" prefWidth="52.0" resizable="false" text="Answer" />
+                        <TableColumn fx:id="colName" prefWidth="77.0" resizable="false" text="Type" />
+                    </columns>
+                  </TableView>
+                  <TextField fx:id="txtSearch" layoutX="62.0" layoutY="429.0" onKeyReleased="#handleSearch" prefHeight="38.0" prefWidth="762.0" promptText="Search : Enter Keyword" />
+                  <JFXTextField fx:id="txtID" layoutX="563.0" layoutY="498.0" prefHeight="25.0" prefWidth="250.0" visible="false" />
+                  <JFXTextField fx:id="txtName" layoutX="563.0" layoutY="534.0" prefHeight="25.0" prefWidth="250.0" visible="false" />
+                  <JFXTextField fx:id="txtMaCauHoi" layoutX="563.0" layoutY="569.0" prefHeight="25.0" prefWidth="250.0" visible="false" />
+                  <ImageView fitHeight="50.0" fitWidth="40.0" layoutX="14.0" layoutY="429.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8_Search_50px.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+        </items>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </SplitPane>
+   </children>
+</AnchorPane>

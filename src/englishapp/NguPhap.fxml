@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="639.0" prefWidth="908.0" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="englishapp.NguPhapController">
+   <children>
+      <VBox alignment="CENTER" prefHeight="64.0" prefWidth="856.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="titletext" text="PRACTICE GRAMMAR" />
+         </children>
+      </VBox>
+      <HBox alignment="CENTER_LEFT" layoutX="19.0" layoutY="64.0" prefHeight="100.0" prefWidth="870.0" spacing="10.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Question |">
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="Segoe UI Black Italic" size="18.0" />
+               </font></Text>
+            <Text fx:id="txtNumber" strokeType="OUTSIDE" strokeWidth="0.0" text="Number" textAlignment="JUSTIFY">
+               <font>
+                  <Font name="Segoe UI Black Italic" size="18.0" />
+               </font></Text>
+            <Text fx:id="txtTotal" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="RIGHT">
+               <font>
+                  <Font name="Segoe UI Black Italic" size="18.0" />
+               </font></Text>
+         </children>
+      </HBox>
+      <VBox alignment="CENTER" layoutX="22.0" layoutY="166.0" prefHeight="100.0" prefWidth="863.0" style="-fx-background-color: #dcdcdc;" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0">
+         <padding>
+            <Insets top="10.0" />
+         </padding>
+         <children>
+            <Text fx:id="txtContent" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textcontent" text="Text" />
+         </children>
+      </VBox>
+      <GridPane alignment="CENTER" layoutX="98.0" layoutY="278.0" prefHeight="179.0" prefWidth="669.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="titletext" text="A" />
+                  <JFXButton fx:id="btnA" alignment="CENTER" onAction="#handleAnswerA" prefHeight="50.0" prefWidth="250.0" textAlignment="JUSTIFY" />
+               </children>
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="30.0" GridPane.columnIndex="1">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="titletext" text="B" />
+                  <JFXButton fx:id="btnB" onAction="#handleAnswerB" prefHeight="50.0" prefWidth="250.0" />
+               </children>
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="30.0" GridPane.rowIndex="1">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="titletext" text="C" />
+                  <JFXButton fx:id="btnC" onAction="#handleAnswerC" prefHeight="50.0" prefWidth="250.0" />
+               </children>
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="30.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="titletext" text="D" />
+                  <JFXButton fx:id="btnD" onAction="#handleAnswerD" prefHeight="50.0" prefWidth="250.0" />
+               </children>
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </HBox>
+         </children>
+      </GridPane>
+      <HBox alignment="CENTER" layoutX="56.0" layoutY="467.0" prefHeight="100.0" prefWidth="700.0" spacing="20.0" style="-fx-border-color: #ff7f50;" AnchorPane.leftAnchor="70.0" AnchorPane.rightAnchor="70.0">
+         <children>
+            <Text fill="#f20303" strokeType="OUTSIDE" strokeWidth="0.0" text="Scrore ">
+               <styleClass>
+                  <String fx:value="labeltext" />
+                  <String fx:value="titletext" />
+               </styleClass></Text>
+            <Text fx:id="score" disable="true" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="titletext" text="0" />
+            <JFXButton fx:id="btnKetQua" onAction="#handleResult" prefHeight="60.0" prefWidth="150.0" text="RESULT" />
+            <JFXButton fx:id="btnNext" onAction="#handleNext" prefHeight="60.0" prefWidth="150.0" text="NEXT" />
+            <JFXButton fx:id="btnExit" onAction="#handleExit" prefHeight="60.0" prefWidth="150.0" text="Exit" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

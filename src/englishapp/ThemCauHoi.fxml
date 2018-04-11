@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<VBox fx:id="pane" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="570.0" spacing="10.0" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="englishapp.ThemCauHoiController">
+   <children>
+      <Text id="titletext" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="titletext" text="QUESTION" />
+      <JFXTextField fx:id="txtQuestion" promptText="Enter content" />
+      <Label id="err" fx:id="errCauhoi" styleClass="err" />
+      <JFXTextField fx:id="txtChoiceA" promptText="Answer A" />
+      <Label id="err" fx:id="errA" styleClass="err" />
+      <JFXTextField fx:id="txtChoiceB" promptText="Answer B" />
+      <Label id="err" fx:id="errB" styleClass="err" />
+      <JFXTextField fx:id="txtChoiceC" promptText="Answer C" />
+      <Label id="err" fx:id="errC" styleClass="err" />
+      <JFXTextField fx:id="txtChoiceD" promptText="Answer D" />
+      <Label id="err" fx:id="errD" styleClass="err" />
+      <JFXTextField fx:id="txtDapAn" promptText="Corect answer" />
+      <Label id="err" fx:id="errDapAn" styleClass="err" />
+      <JFXComboBox fx:id="cmbType" prefHeight="25.0" prefWidth="549.0" promptText="Choose type question" />
+      <Label id="err" fx:id="errCombobox" styleClass="err" />
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="438.0" spacing="10.0">
+         <children>
+            <Button fx:id="btnThem" mnemonicParsing="false" onAction="#addAction" prefHeight="50.0" prefWidth="100.0" text="ADD">
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="PLUS" size="20" />
+               </graphic>
+            </Button>
+            <Button fx:id="btnBack" mnemonicParsing="false" onAction="#resetAction" prefHeight="50.0" prefWidth="100.0" text="BACK">
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="REFRESH" size="20" />
+               </graphic>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+   <padding>
+      <Insets left="30.0" right="30.0" />
+   </padding>
+</VBox>

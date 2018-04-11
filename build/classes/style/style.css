@@ -1,0 +1,79 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Mar 31, 2018, 1:35:52 PM
+    Author     : toanten
+*/
+* {
+    -fx-primary : white;
+    -fx-secondary : #1451e0;
+}
+.root{
+    -fx-background-color: #efe8e8;
+}
+.glyph-icon
+{
+    -fx-fill:#000000;
+}
+.button{
+    -fx-background-color: -fx-secondary;
+    -fx-border-color: -fx-secondary;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-font-size: 13pt;
+    -fx-text-fill:-fx-primary;
+}
+.button:hover{
+    -fx-border-color: #40e0d0;
+    -fx-background-color: #40e0d0;
+    -fx-text-fill: -fx-primary;
+}
+.text-field
+{
+    -fx-text-fill: -fx-primarytext;
+    -fx-font-size : 13pt;
+    -jfx-focus-color: -fx-secondary;
+    -fx-text-fill: derive(-fx-secondary, 20%);
+}
+.titletext
+{
+    -fx-font-family:"Tamoha";
+    -fx-font-size: 36;
+    -fx-font-weight:bold;
+    -fx-fill:gold;
+    -fx-stroke:blue;
+    -fx-stroke-width:2;
+}
+.textcontent{
+    -fx-fill: #b22222;
+    -fx-font-size : 18pt;
+    -fx-font-family:"Allerta Stencil";
+    
+}
+.labeltext{
+    -fx-text-fill: #ff6347;
+    -fx-font-size : 12pt;
+    -fx-font-family:"Courier New";
+    -fx-font-weight:bold;
+}
+.labelImage{
+    -fx-text-fill: #ff8c00;
+    -fx-font-size : 14pt;
+    -fx-font-family:"Lucida Console";
+    -fx-font-weight:bold;
+}
+.err
+{
+    -fx-text-fill: red;
+}
+.errLogin
+{
+    -jfx-unfocus-color: red;
+    -jfx-focus-color: red;
+}
+
+
+

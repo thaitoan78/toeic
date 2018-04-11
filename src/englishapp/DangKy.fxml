@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="580.0" prefWidth="450.0" spacing="10.0" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="englishapp.DangKyController">
+   <children>
+      <Text id="titletext" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="titletext" text="SIGN UP" textAlignment="JUSTIFY" />
+      <JFXTextField fx:id="txtUserName" labelFloat="true" promptText="Username" />
+      <Label id="err" fx:id="errUsername" styleClass="err" />
+      <JFXPasswordField fx:id="txtPassword" promptText="Password" />
+      <Label id="err" fx:id="errPassword" styleClass="err" />
+      <JFXTextField fx:id="txtEmail" labelFloat="true" promptText="Email" />
+      <Label id="err" fx:id="errEmail" styleClass="err" />
+      <JFXTextField fx:id="txtFirstName" labelFloat="true" promptText="Firstname" />
+      <Label id="err" fx:id="errFirstname" styleClass="err" />
+      <JFXTextField fx:id="txtLastName" labelFloat="true" promptText="Lastname" />
+      <Label id="err" fx:id="errLastname" styleClass="err" />
+      <ComboBox fx:id="cmbQuyen" prefHeight="26.0" prefWidth="370.0" promptText="Choose permission" />
+      <Label id="err" fx:id="errCmb" styleClass="err" />
+      <HBox alignment="CENTER" prefHeight="89.0" prefWidth="380.0" spacing="10.0">
+         <children>
+            <JFXButton fx:id="btnDangKy" onAction="#regButton" prefHeight="50.0" prefWidth="100.0" text="REGISTER" textAlignment="JUSTIFY" />
+            <JFXButton fx:id="btnQuayLai" onAction="#backButton" prefHeight="50.0" prefWidth="100.0" text="RESET" textAlignment="JUSTIFY" />
+         </children>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </HBox>
+   </children>
+   <padding>
+      <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+   </padding>
+</VBox>

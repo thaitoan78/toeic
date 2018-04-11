@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="639.0" prefWidth="899.0" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="englishapp.HinhAnhController">
+   <children>
+      <VBox alignment="CENTER" prefHeight="64.0" prefWidth="856.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Text id="titletext" strokeType="OUTSIDE" strokeWidth="0.0" text="PICTURE PRACTICE" />
+         </children>
+      </VBox>
+      <HBox alignment="CENTER_LEFT" layoutX="19.0" layoutY="64.0" prefHeight="100.0" prefWidth="870.0" spacing="20.0" style="-fx-border-color: #f45d49;">
+         <children>
+            <Text id="text" strokeType="OUTSIDE" strokeWidth="0.0" text="Question | ">
+               <font>
+                  <Font name="Segoe UI Black Italic" size="21.0" />
+               </font></Text>
+            <Text fx:id="txtNumber" strokeType="OUTSIDE" strokeWidth="0.0" text="Number |">
+               <font>
+                  <Font name="Segoe UI Black Italic" size="21.0" />
+               </font></Text>
+            <Text id="text" fx:id="txtTotal" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="RIGHT">
+               <font>
+                  <Font name="Segoe UI Black Italic" size="21.0" />
+               </font></Text>
+         </children>
+      </HBox>
+      <VBox alignment="CENTER" layoutX="15.0" layoutY="183.0" prefHeight="77.0" prefWidth="870.0">
+         <children>
+            <Text id="text" fx:id="txtContent" strokeType="OUTSIDE" strokeWidth="0.0" text="Content" textAlignment="CENTER">
+               <font>
+                  <Font name="Segoe UI Black" size="25.0" />
+               </font></Text>
+         </children>
+      </VBox>
+      <GridPane alignment="CENTER" layoutX="97.0" layoutY="288.0" prefHeight="191.0" prefWidth="663.0" style="-fx-border-color: #f45d49;">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <JFXButton fx:id="btnA" alignment="CENTER" prefHeight="50.0" prefWidth="250.0" textAlignment="JUSTIFY" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </JFXButton>
+            <JFXButton fx:id="btnB" prefHeight="50.0" prefWidth="250.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
+            <JFXButton fx:id="btnC" prefHeight="50.0" prefWidth="250.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+            <JFXButton fx:id="btnD" prefHeight="50.0" prefWidth="250.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+         </children>
+      </GridPane>
+      <HBox alignment="CENTER" layoutX="19.0" layoutY="497.0" prefHeight="100.0" prefWidth="863.0" spacing="20.0">
+         <children>
+            <JFXButton fx:id="btnKetQua" onAction="#handleResult" prefHeight="60.0" prefWidth="150.0" text="RESULT" />
+            <JFXButton fx:id="btnNext" onAction="#handleNext" prefHeight="60.0" prefWidth="150.0" text="NEXT" />
+            <JFXButton fx:id="btnExit" onAction="#handleExit" prefHeight="60.0" prefWidth="150.0" text="Exit" />
+            <Text id="text" fx:id="txtKetQua" disable="true" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false" />
+         </children>
+      </HBox>
+      <ProgressBar fx:id="timebar" layoutX="179.0" layoutY="589.0" prefHeight="40.0" prefWidth="500.0" progress="0.72">
+         <effect>
+            <ColorAdjust hue="-0.4732824427480915" />
+         </effect>
+      </ProgressBar>
+   </children>
+</AnchorPane>
