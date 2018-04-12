@@ -21,7 +21,7 @@
       </VBox>
       <HBox alignment="CENTER_LEFT" layoutX="19.0" layoutY="64.0" prefHeight="100.0" prefWidth="870.0" spacing="10.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Question |">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Question ">
                <HBox.margin>
                   <Insets left="20.0" />
                </HBox.margin>
@@ -32,7 +32,7 @@
                <font>
                   <Font name="Segoe UI Black Italic" size="18.0" />
                </font></Text>
-            <Text fx:id="txtTotal" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="RIGHT">
+            <Text fx:id="txtTotal" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textcontent" text="Text" textAlignment="RIGHT">
                <font>
                   <Font name="Segoe UI Black Italic" size="18.0" />
                </font></Text>
@@ -46,7 +46,7 @@
             <Text fx:id="txtContent" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textcontent" text="Text" />
          </children>
       </VBox>
-      <GridPane alignment="CENTER" layoutX="98.0" layoutY="278.0" prefHeight="179.0" prefWidth="669.0">
+      <GridPane alignment="CENTER" layoutX="98.0" layoutY="278.0" prefHeight="179.0" prefWidth="669.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -56,37 +56,37 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="titletext" text="A" />
-                  <JFXButton fx:id="btnA" alignment="CENTER" onAction="#handleAnswerA" prefHeight="50.0" prefWidth="250.0" textAlignment="JUSTIFY" />
+                  <JFXButton fx:id="btnA" alignment="CENTER" focusTraversable="false" onAction="#handleAnswerA" prefHeight="50.0" prefWidth="250.0" textAlignment="CENTER" />
                </children>
                <GridPane.margin>
                   <Insets />
                </GridPane.margin>
             </HBox>
-            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="30.0" GridPane.columnIndex="1">
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0" GridPane.columnIndex="1">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="titletext" text="B" />
-                  <JFXButton fx:id="btnB" onAction="#handleAnswerB" prefHeight="50.0" prefWidth="250.0" />
+                  <JFXButton fx:id="btnB" focusTraversable="false" onAction="#handleAnswerB" prefHeight="50.0" prefWidth="250.0" textAlignment="CENTER" />
                </children>
                <GridPane.margin>
                   <Insets />
                </GridPane.margin>
             </HBox>
-            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="30.0" GridPane.rowIndex="1">
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0" GridPane.rowIndex="1">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="titletext" text="C" />
-                  <JFXButton fx:id="btnC" onAction="#handleAnswerC" prefHeight="50.0" prefWidth="250.0" />
+                  <JFXButton fx:id="btnC" focusTraversable="false" onAction="#handleAnswerC" prefHeight="50.0" prefWidth="250.0" textAlignment="CENTER" />
                </children>
                <GridPane.margin>
                   <Insets />
                </GridPane.margin>
             </HBox>
-            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="30.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="titletext" text="D" />
-                  <JFXButton fx:id="btnD" onAction="#handleAnswerD" prefHeight="50.0" prefWidth="250.0" />
+                  <JFXButton fx:id="btnD" focusTraversable="false" onAction="#handleAnswerD" prefHeight="50.0" prefWidth="250.0" textAlignment="CENTER" />
                </children>
                <GridPane.margin>
                   <Insets />
@@ -94,7 +94,7 @@
             </HBox>
          </children>
       </GridPane>
-      <HBox alignment="CENTER" layoutX="56.0" layoutY="467.0" prefHeight="100.0" prefWidth="700.0" spacing="20.0" style="-fx-border-color: #ff7f50;" AnchorPane.leftAnchor="70.0" AnchorPane.rightAnchor="70.0">
+      <HBox alignment="CENTER" layoutX="56.0" layoutY="467.0" prefHeight="100.0" prefWidth="700.0" spacing="20.0" style="-fx-border-color: #ff7f50;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
             <Text fill="#f20303" strokeType="OUTSIDE" strokeWidth="0.0" text="Scrore ">
                <styleClass>
@@ -103,8 +103,8 @@
                </styleClass></Text>
             <Text fx:id="score" disable="true" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="titletext" text="0" />
             <JFXButton fx:id="btnKetQua" onAction="#handleResult" prefHeight="60.0" prefWidth="150.0" text="RESULT" />
-            <JFXButton fx:id="btnNext" onAction="#handleNext" prefHeight="60.0" prefWidth="150.0" text="NEXT" />
-            <JFXButton fx:id="btnExit" onAction="#handleExit" prefHeight="60.0" prefWidth="150.0" text="Exit" />
+            <JFXButton fx:id="btnNext" focusTraversable="false" onAction="#handleNext" prefHeight="60.0" prefWidth="150.0" text="NEXT" />
+            <JFXButton fx:id="btnExit" focusTraversable="false" onAction="#handleExit" prefHeight="60.0" prefWidth="150.0" text="Exit" />
          </children>
       </HBox>
    </children>

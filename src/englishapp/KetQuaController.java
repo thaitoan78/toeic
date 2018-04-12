@@ -31,7 +31,6 @@ public class KetQuaController implements Initializable {
     @FXML
     private Label lblKetQua,lblTen;
     
-
     private Connection connect;
     private Statement statement;
     private ResultSet rs;

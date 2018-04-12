@@ -140,14 +140,14 @@ public class HomeController implements Initializable {
             stage = (Stage) imgAudio.getScene().getWindow();
             stage.hide();
             EnglishAssistantUtil tf = new EnglishAssistantUtil();
-            tf.transferForm("englishapp/NguPhap.fxml",
-                    "Grammar");
+            tf.transferForm("englishapp/DienKhuyet.fxml",
+                    "Blank Grammar");
         } else if (event.getSource() == imgGrammar) {
             stage = (Stage) imgGrammar.getScene().getWindow();
             stage.hide();
             EnglishAssistantUtil tf = new EnglishAssistantUtil();
             tf.transferForm("englishapp/NguPhap.fxml",
-                    "Grammar");
+                    "Grammar Practice");
         } else if (event.getSource() == imgPicture) {
             stage = (Stage) imgPicture.getScene().getWindow();
             stage.hide();

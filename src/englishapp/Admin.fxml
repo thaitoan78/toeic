@@ -52,12 +52,12 @@
                         <Font name="System Bold" size="28.0" />
                     </font>
                 </Label>
-                <ImageView fitHeight="62.0" fitWidth="72.0" layoutX="23.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fitHeight="62.0" fitWidth="72.0" layoutX="15.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../images/icons8_Male_User_104px.png" />
                     </image>
                 </ImageView>
-                <Separator layoutX="83.0" layoutY="63.0" prefHeight="9.0" prefWidth="516.0" />
+                <Separator layoutX="83.0" layoutY="63.0" prefHeight="9.0" prefWidth="516.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
                 <Label fx:id="lblName" layoutX="97.0" layoutY="42.0" prefHeight="17.0" prefWidth="182.0" text="Xin chào : Admin" textFill="WHITE" AnchorPane.leftAnchor="97.0" AnchorPane.rightAnchor="321.0">
                     <font>
                         <Font name="System Bold" size="12.0" />

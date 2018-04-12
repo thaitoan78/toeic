@@ -28,7 +28,7 @@
       <HBox alignment="CENTER" prefHeight="89.0" prefWidth="380.0" spacing="10.0">
          <children>
             <JFXButton fx:id="btnDangKy" onAction="#regButton" prefHeight="50.0" prefWidth="100.0" text="REGISTER" textAlignment="JUSTIFY" />
-            <JFXButton fx:id="btnQuayLai" onAction="#backButton" prefHeight="50.0" prefWidth="100.0" text="RESET" textAlignment="JUSTIFY" />
+            <JFXButton fx:id="btnQuayLai" focusTraversable="false" onAction="#backButton" prefHeight="50.0" prefWidth="100.0" text="RESET" textAlignment="JUSTIFY" />
          </children>
          <VBox.margin>
             <Insets />

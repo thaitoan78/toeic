@@ -54,27 +54,39 @@
                   <Image url="@../images/grammar.png" />
                </image>
             </ImageView>
-            <Label styleClass="labelImage" text="Grammar" />
+            <Label styleClass="labelImage" text="Grammar">
+               <padding>
+                  <Insets top="5.0" />
+               </padding></Label>
          </children>
+         <GridPane.margin>
+            <Insets />
+         </GridPane.margin>
       </VBox>
       <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
          <children>
             <ImageView fx:id="imgAudio" fitHeight="100.0" fitWidth="100.0" onMouseClicked="#handleAction" pickOnBounds="true" preserveRatio="true" styleClass="imageView">
                <image>
-                  <Image url="@../images/audio.png" />
+                  <Image url="@../images/word.png" />
                </image>
             </ImageView>
-            <Label styleClass="labelImage" text="Audio" />
+            <Label styleClass="labelImage" text="Fill">
+               <padding>
+                  <Insets top="5.0" />
+               </padding></Label>
          </children>
       </VBox>
       <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="3">
          <children>
             <ImageView fx:id="imgPicture" fitHeight="100.0" fitWidth="100.0" onMouseClicked="#handleAction" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../images/image2.png" />
+                  <Image url="@../images/picture2.png" />
                </image>
             </ImageView>
-            <Label styleClass="labelImage" text="Picture" />
+            <Label styleClass="labelImage" text="Picture">
+               <padding>
+                  <Insets top="5.0" />
+               </padding></Label>
          </children>
       </VBox>
       <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: gray;" GridPane.columnIndex="1" GridPane.rowIndex="3">
@@ -83,7 +95,10 @@
                <image>
                   <Image url="@../images/setting.png" />
                </image></ImageView>
-            <Label styleClass="labelImage" text="Setting" />
+            <Label styleClass="labelImage" text="Setting">
+               <padding>
+                  <Insets top="5.0" />
+               </padding></Label>
          </children>
       </VBox>
       <Separator prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="1" />

@@ -67,14 +67,18 @@ public class NguPhapController implements Initializable {
 
         try {
             statement = connect.createStatement();
-            String sqlCount = "Select count(*) from question where qimage IS NULL";
+            String sqlCount = "Select count(*) from question q, loaicauhoi l "
+                    + "where q.loaicauhoi=l.maloai "
+                    + "and l.name='Grammar'";
             rs = statement.executeQuery(sqlCount);
             rs.next();
             number = rs.getString(1);
 
             txtTotal.setText("Total question |" + " " + number);
             rs.close();
-            String sql = "Select * from question where qimage IS NULL order by rand()";
+            String sql = "Select * from question q, loaicauhoi l "
+                    + "where q.loaicauhoi=l.maloai "
+                    + "and l.name='Grammar' order by rand()";
             rs = statement.executeQuery(sql);
             next();
         } catch (SQLException | IOException ex) {

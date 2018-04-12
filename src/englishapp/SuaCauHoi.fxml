@@ -19,7 +19,7 @@
 
 <AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="758.0" prefWidth="1320.0" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="englishapp.SuaCauHoiController">
    <children>
-      <SplitPane dividerPositions="0.36397748592870544" prefHeight="758.0" prefWidth="1320.0">
+      <SplitPane dividerPositions="0.36397748592870544" prefHeight="758.0" prefWidth="1320.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="819.0" prefWidth="474.0">
                <children>

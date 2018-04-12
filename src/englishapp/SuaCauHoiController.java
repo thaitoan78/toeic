@@ -31,11 +31,8 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.util.StringConverter;
 import util.EnglishAssistantUtil;
@@ -119,6 +116,8 @@ public class SuaCauHoiController implements Initializable {
     private TableColumn<?, ?> colName;
 
     private Stage stage;
+    @FXML
+    private AnchorPane anchorPane;
 
     /**
      * Initializes the controller class.

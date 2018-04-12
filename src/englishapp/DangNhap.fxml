@@ -36,7 +36,7 @@
             <Insets right="30.0" />
          </GridPane.margin></JFXPasswordField>
       <FontAwesomeIconView glyphName="LOCK" size="70" textAlignment="JUSTIFY" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-      <JFXButton fx:id="btnSignin" onAction="#signinButton" text="Sign In" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+      <JFXButton fx:id="btnSignin" focusTraversable="false" onAction="#signinButton" text="Sign In" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3">
          <GridPane.margin>
             <Insets right="60.0" />
          </GridPane.margin>

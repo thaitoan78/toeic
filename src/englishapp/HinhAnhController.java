@@ -7,17 +7,17 @@ package englishapp;
 
 import util.DBConnection;
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXRadioButton;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javafx.animation.Animation;
-import javafx.animation.Transition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -26,13 +26,12 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
-import javafx.scene.control.ProgressBar;
-import javafx.scene.effect.ColorAdjust;
-import javafx.scene.image.ImageView;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import javafx.util.Duration;
+import util.AlertDialog;
+import util.EnglishAssistantUtil;
 
 /**
  * FXML Controller class
@@ -41,14 +40,6 @@ import javafx.util.Duration;
  */
 public class HinhAnhController implements Initializable {
 
-    @FXML
-    private JFXButton btnA;
-    @FXML
-    private JFXButton btnB;
-    @FXML
-    private JFXButton btnC;
-    @FXML
-    private JFXButton btnD;
     @FXML
     private JFXButton btnKetQua;
     @FXML
@@ -60,17 +51,29 @@ public class HinhAnhController implements Initializable {
     private Text txtTotal;
     @FXML
     private Text txtContent;
-    private Text lblKetQua;
-    @FXML
     private Text txtKetQua;
 
     private Connection connect;
     private Statement statement;
-    private ResultSet rs = null;
+    private ResultSet rs;
     @FXML
     private JFXButton btnExit;
-    private Integer currentScore;
-    String number;
+
+    @FXML
+    private JFXRadioButton radA;
+    @FXML
+    private ToggleGroup tongle;
+    @FXML
+    private JFXRadioButton radB;
+    @FXML
+    private JFXRadioButton radC;
+    @FXML
+    private JFXRadioButton radD;
+    @FXML
+    private Text score;
+    private Stage stage;
+    private String number, currentAnswer;// so cau
+    private Integer currentPoint; //diem hien tai
 
     /**
      * Initializes the controller class.
@@ -94,7 +97,8 @@ public class HinhAnhController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         connect = DBConnection.englishConnection();
-        currentScore = 0;
+        currentPoint = 0;
+        btnKetQua.setDisable(true);
         try {
 
             String sql = "Select count(*) from question where qimage IS NOT NULL";
@@ -118,24 +122,60 @@ public class HinhAnhController implements Initializable {
 
             rs.next();
             try {
-                txtContent.setText(rs.getString("content"));
-                btnA.setText(rs.getString("a"));
-                btnB.setText(rs.getString("b"));
-                btnC.setText(rs.getString("c"));
-                btnD.setText(rs.getString("d"));
-                txtKetQua.setText(rs.getString("answer"));
-                txtNumber.setText(rs.getString("id"));
+                // last row
+                if (rs.isAfterLast()) {
+
+                    String sqlUpdate = "update points set diem= ? where name = ?";
+                    PreparedStatement preS = connect.prepareStatement(sqlUpdate);
+                    preS.setInt(1, currentPoint);
+                    preS.setString(2, HomeController.name);
+                    int i = preS.executeUpdate();
+                    if (i == 1) {
+                        textField();
+                        AlertDialog.infoBox(Alert.AlertType.INFORMATION, "Dialog!",
+                                "Click Result button to show result",
+                                "Congratulation !. You finished your test ^^");
+                        btnKetQua.setDisable(false);
+                    }
+                    return;
+
+                }
             } catch (SQLException ex) {
                 System.out.println("SQLException: " + ex.getMessage());
+                System.out.println("SQLState: " + ex.getSQLState());
+                System.out.println("VendorError: " + ex.getErrorCode());
             }
+
+            try {
+                txtNumber.setText(rs.getString("id"));
+                txtContent.setText(rs.getString("content"));
+                radA.setText(rs.getString("a"));
+                radB.setText(rs.getString("b"));
+                radC.setText(rs.getString("c"));
+                radD.setText(rs.getString("d"));
+                currentAnswer = rs.getString("answer");
+
+            } catch (SQLException ex) {
+                System.out.println("SQLException: " + ex.getMessage());
+                System.out.println("SQLState: " + ex.getSQLState());
+                System.out.println("VendorError: " + ex.getErrorCode());
+            }
+
         } catch (SQLException ex) {
-            Logger.getLogger(HinhAnhController.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("SQLException: " + ex.getMessage());
+            System.out.println("SQLState: " + ex.getSQLState());
+            System.out.println("VendorError: " + ex.getErrorCode());
         }
 
     }
 
     @FXML
-    private void handleResult(ActionEvent event) {
+    private void handleResult(ActionEvent event) throws IOException {
+        stage = (Stage) btnKetQua.getScene().getWindow();
+        stage.hide();
+        EnglishAssistantUtil tf = new EnglishAssistantUtil();
+        tf.transferForm("englishapp/KetQua.fxml",
+                "Result");
     }
 
     @FXML
@@ -152,7 +192,7 @@ public class HinhAnhController implements Initializable {
         alert.showAndWait().ifPresent(response -> {
             if (response == ButtonType.OK) {
                 try {
-                    Stage stage = (Stage) btnExit.getScene().getWindow();
+                    stage = (Stage) btnExit.getScene().getWindow();
                     Parent root = FXMLLoader.load(getClass().getResource("Home.fxml"));
                     Scene scene = new Scene(root);
                     stage.setScene(scene);
@@ -164,6 +204,67 @@ public class HinhAnhController implements Initializable {
                 alert.close();
             }
         });
+    }
+
+    @FXML
+    private void handleAnswerA(ActionEvent event) {
+        if ("a".equals(currentAnswer)) {
+            currentPoint += 1;
+        }
+        updateScore(currentPoint);
+        next();
+    }
+
+    private void updateScore(Integer passedscore) {
+        score.setText(passedscore.toString());
+    }
+
+    @FXML
+    private void handleAnswerB(ActionEvent event) {
+        if ("b".equals(currentAnswer)) {
+            currentPoint += 1;
+        }
+        updateScore(currentPoint);
+        next();
+    }
+
+    @FXML
+    private void handleAnswerC(ActionEvent event) {
+        if ("c".equals(currentAnswer)) {
+            currentPoint += 1;
+        }
+        updateScore(currentPoint);
+        next();
+    }
+
+    @FXML
+    private void handleAnswerD(ActionEvent event) {
+        if ("d".equals(currentAnswer)) {
+            currentPoint += 1;
+        }
+        updateScore(currentPoint);
+        next();
+    }
+
+    public void textField() {
+        btnNext.setDisable(true);
+        radA.setDisable(true);
+        radB.setDisable(true);
+        radC.setDisable(true);
+        radD.setDisable(true);
+        radA.setSelected(false);
+        radB.setSelected(false);
+        radC.setSelected(false);
+        radD.setSelected(false);
+        radA.setText("No answer");
+        radB.setText("No answer");
+        radC.setText("No answer");
+        radD.setText("No answer");
+        txtNumber.setText("0");
+        txtTotal.setText("Total question: 0");
+        currentPoint = 0;
+        txtContent.setText("No question");
+
     }
 
 }

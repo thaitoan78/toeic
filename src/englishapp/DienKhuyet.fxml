@@ -14,11 +14,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="639.0" prefWidth="908.0" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="englishapp.HinhAnhController">
+<AnchorPane prefHeight="639.0" prefWidth="908.0" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="englishapp.DienKhuyetController">
    <children>
       <VBox alignment="CENTER" prefHeight="64.0" prefWidth="856.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="titletext" text="PRACTICE GRAMMAR" textAlignment="CENTER" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="titletext" text="PRACTICE GRAMMAR" />
          </children>
       </VBox>
       <HBox alignment="CENTER_LEFT" layoutX="19.0" layoutY="64.0" prefHeight="100.0" prefWidth="870.0" spacing="10.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
@@ -30,11 +30,11 @@
                <font>
                   <Font name="Segoe UI Black Italic" size="18.0" />
                </font></Text>
-            <Text fx:id="txtNumber" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textcontent" text="Number" textAlignment="CENTER">
+            <Text fx:id="txtNumber" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textcontent" text="Number" textAlignment="JUSTIFY">
                <font>
                   <Font name="Segoe UI Black Italic" size="18.0" />
                </font></Text>
-            <Text fx:id="txtTotal" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER">
+            <Text fx:id="txtTotal" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="RIGHT">
                <font>
                   <Font name="Segoe UI Black Italic" size="18.0" />
                </font></Text>
@@ -45,7 +45,7 @@
             <Insets top="10.0" />
          </padding>
          <children>
-            <Text fx:id="txtContent" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textcontent" text="Text" textAlignment="CENTER" />
+            <Text fx:id="txtContent" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textcontent" text="Text" />
          </children>
       </VBox>
       <GridPane alignment="CENTER" layoutX="98.0" layoutY="278.0" prefHeight="179.0" prefWidth="669.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
@@ -61,7 +61,7 @@
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="titletext" text="A" />
-                  <JFXRadioButton fx:id="radA" focusTraversable="false" onAction="#handleAnswerA" textAlignment="CENTER">
+                  <JFXRadioButton fx:id="radA" focusTraversable="false" onAction="#handleAnswerA">
                      <font>
                         <Font name="Candara" size="15.0" />
                      </font>
@@ -76,7 +76,7 @@
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0" GridPane.columnIndex="1">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="titletext" text="B" />
-                  <JFXRadioButton fx:id="radB" focusTraversable="false" onAction="#handleAnswerB" textAlignment="CENTER" toggleGroup="$tongle">
+                  <JFXRadioButton fx:id="radB" focusTraversable="false" onAction="#handleAnswerB" toggleGroup="$tongle">
                      <font>
                         <Font name="Candara" size="15.0" />
                      </font></JFXRadioButton>
@@ -88,7 +88,7 @@
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0" GridPane.rowIndex="1">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="titletext" text="C" />
-                  <JFXRadioButton fx:id="radC" focusTraversable="false" onAction="#handleAnswerC" textAlignment="CENTER" toggleGroup="$tongle">
+                  <JFXRadioButton fx:id="radC" focusTraversable="false" onAction="#handleAnswerC" toggleGroup="$tongle">
                      <font>
                         <Font name="Candara" size="15.0" />
                      </font></JFXRadioButton>
@@ -100,7 +100,7 @@
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="titletext" text="D" />
-                  <JFXRadioButton fx:id="radD" focusTraversable="false" onAction="#handleAnswerD" textAlignment="CENTER" toggleGroup="$tongle">
+                  <JFXRadioButton fx:id="radD" focusTraversable="false" onAction="#handleAnswerD" toggleGroup="$tongle">
                      <font>
                         <Font name="Candara" size="15.0" />
                      </font></JFXRadioButton>
@@ -120,7 +120,7 @@
                </styleClass></Text>
             <Text fx:id="score" disable="true" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="titletext" text="0" />
             <JFXButton fx:id="btnKetQua" onAction="#handleResult" prefHeight="60.0" prefWidth="150.0" text="RESULT" />
-            <JFXButton fx:id="btnNext" focusTraversable="false" onAction="#handleNext" prefHeight="60.0" prefWidth="150.0" text="NEXT" />
+            <JFXButton fx:id="btnNext" onAction="#handleNext" prefHeight="60.0" prefWidth="150.0" text="NEXT" />
             <JFXButton fx:id="btnExit" onAction="#handleExit" prefHeight="60.0" prefWidth="150.0" text="Exit" />
          </children>
       </HBox>
