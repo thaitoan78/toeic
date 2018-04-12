@@ -35,36 +35,20 @@ import util.EnglishAssistantUtil;
 public class NguPhapController implements Initializable {
 
     @FXML
-    private JFXButton btnA;
+    private JFXButton btnA,btnB,btnC,btnD;
     @FXML
-    private JFXButton btnB;
+    private JFXButton btnKetQua,btnNext,btnExit;
+    
     @FXML
-    private JFXButton btnC;
-    @FXML
-    private JFXButton btnD;
-    @FXML
-    private JFXButton btnKetQua;
-    @FXML
-    private JFXButton btnNext;
-    @FXML
-    private JFXButton btnExit;
-
-    @FXML
-    private Text score; // diem
-    @FXML
-    private Text txtNumber;
-    @FXML
-    private Text txtTotal;
-    @FXML
-    private Text txtContent;
+    private Text score,txtNumber,txtTotal,txtContent; // diem
+    
 
     private Statement statement;
     private Connection connect;
     private ResultSet rs;
 
-    private String number;// so cau hoi
-    static String name; // username 
-    private String currentAnswer; // cau tl hien tai
+    private String number,currentAnswer;// so cau
+    
     private Integer currentPoint; //diem hien tai
     private Stage stage;
 
@@ -109,7 +93,7 @@ public class NguPhapController implements Initializable {
                     String sqlUpdate = "update points set diem= ? where name = ?";
                     PreparedStatement preS = connect.prepareStatement(sqlUpdate);
                     preS.setInt(1, currentPoint);
-                    preS.setString(2, name);
+                    preS.setString(2, HomeController.name);
                     int i = preS.executeUpdate();
                     if (i == 1) {
                         textField();

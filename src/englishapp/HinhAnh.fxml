@@ -26,7 +26,7 @@
                <font>
                   <Font name="Segoe UI Black Italic" size="21.0" />
                </font></Text>
-            <Text fx:id="txtNumber" strokeType="OUTSIDE" strokeWidth="0.0" text="Number |">
+            <Text fx:id="txtNumber" strokeType="OUTSIDE" strokeWidth="0.0" text="Number">
                <font>
                   <Font name="Segoe UI Black Italic" size="21.0" />
                </font></Text>

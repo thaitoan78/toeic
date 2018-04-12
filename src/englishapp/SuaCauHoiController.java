@@ -23,10 +23,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
@@ -120,16 +117,12 @@ public class SuaCauHoiController implements Initializable {
     private JFXTextField txtName;
     @FXML
     private TableColumn<?, ?> colName;
-    private ImageView imageView;
-    private Image image;
+
     private Stage stage;
-    @FXML
-    private AnchorPane anchorPane;
 
     /**
      * Initializes the controller class.
      *
-     * @param stage
      * @throws java.io.IOException
      */
     @Override
@@ -186,7 +179,7 @@ public class SuaCauHoiController implements Initializable {
 
     private void loadColumn() {
         colId.setCellValueFactory(new PropertyValueFactory<>("id"));
-        //colType.setCellValueFactory(new PropertyValueFactory<>("loaicauhoi"));
+        
         colCauHoi.setCellValueFactory(new PropertyValueFactory<>("content"));
         colA.setCellValueFactory(new PropertyValueFactory<>("a"));
         colB.setCellValueFactory(new PropertyValueFactory<>("b"));
@@ -241,7 +234,7 @@ public class SuaCauHoiController implements Initializable {
                 txtD.setText(questionList.getD());
                 txtDapAn.setText(questionList.getAnswer());
                 txtName.setText(questionList.getName());
-
+                
             });
         } catch (Exception ex) {
             System.out.println("SQLException: " + ex.getMessage());

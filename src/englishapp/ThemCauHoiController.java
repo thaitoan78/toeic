@@ -39,36 +39,23 @@ public class ThemCauHoiController implements Initializable {
 
     @FXML
     private JFXTextField txtQuestion, txtChoiceA,
-            txtChoiceB, txtChoiceC, txtChoiceD;
-    private Connection connect;
+            txtChoiceB, txtChoiceC, txtChoiceD, txtDapAn;
+
     @FXML
-    private Button btnThem;
+    private Button btnThem, btnBack;
+
     @FXML
-    private Button btnBack;
-    @FXML
-    private JFXTextField txtDapAn;
-    @FXML
-    private Label errCauhoi;
-    @FXML
-    private Label errA;
-    @FXML
-    private Label errB;
-    @FXML
-    private Label errC;
-    @FXML
-    private Label errD;
-    @FXML
-    private Label errDapAn;
+    private Label errCauhoi, errA, errB, errC, errD, errDapAn, errCombobox;
+
     @FXML
     private ComboBox<LoaiCauHoi> cmbType;
     private ObservableList<LoaiCauHoi> list;
-    private String maloai;
-    @FXML
-    private Label errCombobox;
+    private String maloai; // ma loai
 
     @FXML
     private VBox pane;
     private Stage stage;
+    private Connection connect;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -135,10 +122,10 @@ public class ThemCauHoiController implements Initializable {
 
         String query = "INSERT INTO question(loaicauhoi, content, a ,b ,c ,d ,answer) "
                 + "VALUES(? ,? ,? ,? ,? ,?, ?)";
-        if (kiemTraCauHoi && kiemtraA &&
-                kiemtraB && kiemtraC &&
-                kiemtraD && kiemtraDapAn &&
-                isMyComboBoxEmpty) {
+        if (kiemTraCauHoi && kiemtraA
+                && kiemtraB && kiemtraC
+                && kiemtraD && kiemtraDapAn
+                && isMyComboBoxEmpty) {
             try {
                 connect.setAutoCommit(false);
                 PreparedStatement pStm = this.connect.prepareStatement(query);

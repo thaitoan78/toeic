@@ -33,13 +33,9 @@ import javafx.stage.Stage;
 public class AdminController implements Initializable {
 
     @FXML
-    private JFXButton btnThem;
-    @FXML
-    private JFXButton btnEdit;
+    private JFXButton btnThem, btnEdit, btnUser;
 
-    @FXML
-    private JFXButton btnUser;
-    static Label lblUserName;
+    
     @FXML
     private AnchorPane rootPane;
     @FXML
@@ -50,22 +46,20 @@ public class AdminController implements Initializable {
     private ResultSet rs;
 
     private String firstname, lastname, email;
-    static String name;
+    
 
     /**
      * Initializes the controller class.
      *
      */
-
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         connect = DBConnection.englishConnection();
 
         try {
             statement = connect.createStatement();
-            rs = statement.executeQuery("select firstname , lastname ,"
-                    + " email, quyenid "
-                    + "from users where username='" + name + "'");
+            rs = statement.executeQuery("select *"
+                    + "from users where userid='" + HomeController.idCurrent + "'");
             rs.next();
             firstname = rs.getString("firstname");
             lastname = rs.getString("lastname");

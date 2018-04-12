@@ -79,19 +79,18 @@ public class DangNhapController implements Initializable {
     private void loginButton(ActionEvent event) throws IOException {
         try {
 
-            String query = "SELECT firstname, lastname , email "
+            String query = "SELECT * "
                     + "FROM users "
                     + "WHERE username= ? and pass= ?";
             pStm = this.connect.prepareStatement(query);
             pStm.setString(1, txtUserName.getText().trim());
             pStm.setString(2, txtPassword.getText().trim());
 
-            HomeController.name = txtUserName.getText().trim();
-            AdminController.name = txtUserName.getText().trim();
-            NguPhapController.name = txtUserName.getText().trim();
-            KetQuaController.name = txtUserName.getText().trim();
             resultSet = pStm.executeQuery();
             if (resultSet.next()) {
+                //get id , name
+                HomeController.idCurrent=resultSet.getInt("userid");
+                HomeController.name=resultSet.getString("username");
                 stage = (Stage) btnLogin.getScene().getWindow();
                 stage.hide();
                 EnglishAssistantUtil tf = new EnglishAssistantUtil();

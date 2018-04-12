@@ -38,7 +38,7 @@ public class KiemTraTextField {
     // kiem tra nhap so
     public static boolean kiemTraTextFieldNumber(JFXTextField tf) {
         boolean b = false;
-        if (tf.getText().matches("([0-9]+(\\.[0-9]+)?)+")||tf.getText().length() < 10 ) {
+        if (tf.getText().matches("([0-9]+(\\.[0-9]+)?)+")||tf.getText().length() <=10 ) {
             b = true;
         }
         return b;
@@ -97,7 +97,7 @@ public class KiemTraTextField {
 
     public static boolean kiemTraPasswordFieldEmpty(JFXPasswordField tf) {
         boolean b = false;
-        if (tf.getText().length() != 0 || !tf.getText().isEmpty()||tf.getText().length() > 10) {
+        if (tf.getText().length() != 0 || !tf.getText().isEmpty() || tf.getText().length() == 10) {
             b = true;
         }
         return b;

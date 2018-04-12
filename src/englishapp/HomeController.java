@@ -64,7 +64,8 @@ public class HomeController implements Initializable {
     private ImageView imgExit;
 
     private String firstName, lastName, quyenId;
-    static String name;
+    static String name; // get name
+    static Integer idCurrent; // get id
     private Stage stage;
 
     /**
@@ -81,9 +82,8 @@ public class HomeController implements Initializable {
         connect = DBConnection.englishConnection();
         try {
             statement = connect.createStatement();
-            rs = statement.executeQuery("select firstname , lastname ,"
-                    + " email, quyenid "
-                    + "from users where username='" + name + "'");
+            rs = statement.executeQuery("select * "
+                    + "from users where userid='" + idCurrent + "'");
             rs.next();
             firstName = rs.getString("firstname");
             lastName = rs.getString("lastname");
@@ -93,6 +93,7 @@ public class HomeController implements Initializable {
             if ("U".equals(quyenId)) {
                 imgSetting.setDisable(true);
             }
+            
 
         } catch (SQLException ex) {
             Logger.getLogger(HomeController.class.getName()).
@@ -151,8 +152,8 @@ public class HomeController implements Initializable {
             stage = (Stage) imgPicture.getScene().getWindow();
             stage.hide();
             EnglishAssistantUtil tf = new EnglishAssistantUtil();
-            tf.transferForm("englishapp/NguPhap.fxml",
-                    "Grammar");
+            tf.transferForm("englishapp/HinhAnh.fxml",
+                    "Picture Practice");
         }
 
     }

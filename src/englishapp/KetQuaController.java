@@ -6,9 +6,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -20,26 +20,27 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.image.ImageView;
 import util.EnglishAssistantUtil;
 
 public class KetQuaController implements Initializable {
 
-    static String name;
+    
     private Stage stage;
-
+ 
     @FXML
-    private Label lblKetQua;
-    @FXML
-    private Label lblTen;
+    private Label lblKetQua,lblTen;
+    
 
     private Connection connect;
     private Statement statement;
     private ResultSet rs;
 
     @FXML
-    private JFXButton txtAgain;
+    private JFXButton txtAgain,txtHome;
+    
     @FXML
-    private JFXButton txtHome;
+    private ImageView img;
 
     @FXML
     private void handleButtonAction(ActionEvent event) throws IOException {
@@ -63,17 +64,36 @@ public class KetQuaController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         connect = DBConnection.englishConnection();
-        String ten;
+        String firstname;
+        String lastname;
         String diem;
         try {
             statement = connect.createStatement();
-            rs = statement.executeQuery("select * from points "
-                    + "where name='" + name + "'");
+            rs = statement.executeQuery("select u.* , p.diem "
+                    + "from points p , users u "
+                    + "where p.name= u.username and u.userid='" + HomeController.idCurrent + "'");
+
             rs.next();
-            ten = rs.getString("name");
-            diem = rs.getString("diem");
-            lblTen.setText("Congratulation! : " + ten);
+            firstname = rs.getString("u.firstname");
+            lastname = rs.getString("u.lastname");
+            diem = rs.getString("p.diem");
+            lblTen.setText("Congratulation! : " + firstname + " " + lastname);
             lblKetQua.setText("Correct answer : " + diem);
+            // load gif
+            String stringName;
+            if (Integer.valueOf(diem) < 5) {
+                stringName = "bad";
+                String url = String.format("images/%s.gif", stringName);
+                Image i = new Image(url);
+                img.setImage(i);
+
+            } else {
+                stringName = "cong";
+                String url = String.format("images/%s.gif", stringName);
+                Image i = new Image(url);
+                img.setImage(i);
+            }
+
         } catch (SQLException ex) {
             Logger.getLogger(KetQuaController.class.getName()).
                     log(Level.SEVERE, null, ex);
