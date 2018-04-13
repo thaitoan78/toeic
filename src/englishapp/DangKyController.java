@@ -55,13 +55,16 @@ public class DangKyController implements Initializable {
     private JFXTextField txtFirstName;
     @FXML
     private JFXTextField txtLastName;
+
     @FXML
     private JFXButton btnDangKy;
     @FXML
     private JFXButton btnQuayLai;
+
     private PreparedStatement pre;
     private Connection connect;
     private ResultSet rs;
+
     @FXML
     private ComboBox<Role> cmbQuyen;
     private ObservableList<Role> role;
@@ -75,9 +78,9 @@ public class DangKyController implements Initializable {
     private Label errFirstname;
     @FXML
     private Label errLastname;
-    private String roleID;
     @FXML
     private Label errCmb;
+    private String roleID;
 
     /**
      * Initializes the controller class.
@@ -85,15 +88,6 @@ public class DangKyController implements Initializable {
      * @param stage
      * @throws java.io.IOException
      */
-    public void start(final Stage stage) throws IOException {
-        Parent home = FXMLLoader.load(getClass().getResource("DangKy.fxml"));
-        Scene homescene = new Scene(home);
-        homescene.setFill(Color.TRANSPARENT);
-        stage.setTitle("Sign Up");
-        stage.setResizable(false);
-        stage.setScene(homescene);
-        stage.show();
-    }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -151,9 +145,9 @@ public class DangKyController implements Initializable {
         boolean kiemtraQuyen = KiemTraTextField.kiemTraCombobox(
                 cmbQuyen, errCmb, "Choose your permission");
 
-        if (isValidEmail && kiemtraFirstname &&
-                kiemtraLastname && kiemtraPassword &&
-                kiemtraUsername && kiemtraQuyen) {
+        if (isValidEmail && kiemtraFirstname
+                && kiemtraLastname && kiemtraPassword
+                && kiemtraUsername && kiemtraQuyen) {
             try {
                 connect.setAutoCommit(false);
                 String userID = UUID.randomUUID().toString();
@@ -175,8 +169,8 @@ public class DangKyController implements Initializable {
                 pre = this.connect.prepareStatement(insertSql);
                 pre.setString(1, txtUserName.getText().trim());
                 int j = pre.executeUpdate();
-                
-                if (i ==1 && j == 1) {
+
+                if (i == 1 && j == 1) {
                     AlertDialog.infoBox(Alert.AlertType.INFORMATION,
                             "Add user successfully!", "Information!", "Insert!");
                     clearText();

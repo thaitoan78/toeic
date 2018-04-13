@@ -113,6 +113,7 @@ public class DienKhuyetController implements Initializable {
                         AlertDialog.infoBox(Alert.AlertType.INFORMATION, "Dialog!",
                                 "Click Result button to show result",
                                 "Congratulation !. You finished your test ^^");
+
                         btnKetQua.setDisable(false);
                     }
                     return;
@@ -132,7 +133,7 @@ public class DienKhuyetController implements Initializable {
                 radC.setText(rs.getString("c"));
                 radD.setText(rs.getString("d"));
                 currentAnswer = rs.getString("answer");
-                
+                resetRadButton();
 
             } catch (SQLException ex) {
                 System.out.println("SQLException: " + ex.getMessage());
@@ -196,7 +197,7 @@ public class DienKhuyetController implements Initializable {
             currentPoint += 1;
         }
         updateScore(currentPoint);
-        next();
+
     }
 
     @FXML
@@ -206,7 +207,7 @@ public class DienKhuyetController implements Initializable {
 
         }
         updateScore(currentPoint);
-        next();
+
     }
 
     @FXML
@@ -216,7 +217,7 @@ public class DienKhuyetController implements Initializable {
 
         }
         updateScore(currentPoint);
-        next();
+
     }
 
     @FXML
@@ -226,7 +227,7 @@ public class DienKhuyetController implements Initializable {
 
         }
         updateScore(currentPoint);
-        next();
+
     }
 // clear
 
@@ -248,6 +249,19 @@ public class DienKhuyetController implements Initializable {
         txtTotal.setText("Total question: 0");
         currentPoint = 0;
         txtContent.setText("No question");
+
+    }
+
+    public void resetRadButton() {
+        if (radA.isSelected()) {
+            radA.setSelected(false);
+        } else if (radB.isSelected()) {
+            radB.setSelected(false);
+        } else if (radC.isSelected()) {
+            radC.setSelected(false);
+        } else {
+            radD.setSelected(false);
+        }
 
     }
 }

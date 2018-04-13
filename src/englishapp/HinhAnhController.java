@@ -44,25 +44,22 @@ public class HinhAnhController implements Initializable {
     private JFXButton btnKetQua;
     @FXML
     private JFXButton btnNext;
-
+    @FXML
+    private JFXButton btnExit;
+    
     @FXML
     private Text txtNumber;
     @FXML
     private Text txtTotal;
     @FXML
     private Text txtContent;
-    private Text txtKetQua;
 
     private Connection connect;
     private Statement statement;
     private ResultSet rs;
-    @FXML
-    private JFXButton btnExit;
 
     @FXML
     private JFXRadioButton radA;
-    @FXML
-    private ToggleGroup tongle;
     @FXML
     private JFXRadioButton radB;
     @FXML
@@ -70,7 +67,11 @@ public class HinhAnhController implements Initializable {
     @FXML
     private JFXRadioButton radD;
     @FXML
+    private ToggleGroup tongle;
+    
+    @FXML
     private Text score;
+    
     private Stage stage;
     private String number, currentAnswer;// so cau
     private Integer currentPoint; //diem hien tai
@@ -83,15 +84,6 @@ public class HinhAnhController implements Initializable {
      * @param rb
      * @throws java.io.IOException
      */
-    public void start(final Stage stage) throws IOException {
-        Parent home = FXMLLoader.load(getClass().getResource("HinhAnh.fxml"));
-        Scene homescene = new Scene(home);
-        homescene.setFill(Color.TRANSPARENT);
-        stage.setResizable(false);
-        stage.setTitle("Picture");
-        stage.setScene(homescene);
-        stage.show();
-    }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {

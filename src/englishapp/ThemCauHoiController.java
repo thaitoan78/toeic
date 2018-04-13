@@ -60,7 +60,7 @@ public class ThemCauHoiController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         connect = DBConnection.englishConnection();
-        // load combobox len giao dien
+        // load combobox 
         loadCombobox();
 
     }
@@ -82,7 +82,7 @@ public class ThemCauHoiController implements Initializable {
             System.out.println("SQLState: " + ex.getSQLState());
             System.out.println("VendorError: " + ex.getErrorCode());
         }
-        // hien thi name
+        // get name
         cmbType.setConverter(new StringConverter<LoaiCauHoi>() {
             @Override
             public String toString(LoaiCauHoi object) {
@@ -95,7 +95,7 @@ public class ThemCauHoiController implements Initializable {
                 return null;
             }
         });
-        // get value
+        // get id
         cmbType.valueProperty().addListener((obs, oldValue, newValue) -> {
             if (newValue != null) {
                 maloai = newValue.getMaloai();
@@ -142,6 +142,7 @@ public class ThemCauHoiController implements Initializable {
                     AlertDialog.infoBox(Alert.AlertType.INFORMATION,
                             "Insert successfully ", null, "Thông báo");
                     clearText();
+                    txtQuestion.requestFocus();
                 } else {
                     AlertDialog.infoBox(Alert.AlertType.ERROR,
                             "Insert failed ", null, "Thông báo");

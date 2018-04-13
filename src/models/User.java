@@ -33,17 +33,6 @@ public class User {
         this.name = name;
     }
 
-    public User(String mauser, String username, String pass, String firstname, String lastname, String email, String name) {
-        this.mauser = mauser;
-        this.username = username;
-        this.pass = pass;
-        this.firstname = firstname;
-        this.lastname = lastname;
-        this.email = email;
-
-        this.name = name;
-    }
-
     /**
      * @return the userid
      */

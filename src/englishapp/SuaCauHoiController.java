@@ -45,6 +45,8 @@ import util.EnglishAssistantUtil;
 public class SuaCauHoiController implements Initializable {
 
     @FXML
+    private TableColumn<?, ?> colId;
+    @FXML
     private TableColumn<?, ?> colCauHoi;
     @FXML
     private TableColumn<?, ?> colA;
@@ -56,6 +58,8 @@ public class SuaCauHoiController implements Initializable {
     private TableColumn<?, ?> colD;
     @FXML
     private TableColumn<?, ?> colDapAn;
+    @FXML
+    private TableColumn<?, ?> colName;
 
     @FXML
     private JFXButton btnUpdate;
@@ -69,7 +73,11 @@ public class SuaCauHoiController implements Initializable {
     private ResultSet rs;
 
     @FXML
+    private JFXTextField txtID;
+    @FXML
     private JFXTextField txtCauHoi;
+    @FXML
+    private JFXTextField txtMaCauHoi;
     @FXML
     private JFXTextField txtA;
     @FXML
@@ -81,14 +89,10 @@ public class SuaCauHoiController implements Initializable {
     @FXML
     private JFXTextField txtDapAn;
     @FXML
-    private JFXTextField txtID;
-    @FXML
-    private JFXTextField txtMaCauHoi;
+    private JFXTextField txtName;
     @FXML
     private TextField txtSearch;
-    @FXML
-    private TableColumn<?, ?> colId;
-    private TableColumn<?, ?> colLoaiCauHoi;
+
     @FXML
     private ComboBox<LoaiCauHoi> cmbType;
     private ObservableList<LoaiCauHoi> listLoaiCauHoi;
@@ -110,10 +114,6 @@ public class SuaCauHoiController implements Initializable {
     private Label errDapAn;
     @FXML
     private Label errD;
-    @FXML
-    private JFXTextField txtName;
-    @FXML
-    private TableColumn<?, ?> colName;
 
     private Stage stage;
     @FXML
@@ -178,7 +178,7 @@ public class SuaCauHoiController implements Initializable {
 
     private void loadColumn() {
         colId.setCellValueFactory(new PropertyValueFactory<>("id"));
-        
+
         colCauHoi.setCellValueFactory(new PropertyValueFactory<>("content"));
         colA.setCellValueFactory(new PropertyValueFactory<>("a"));
         colB.setCellValueFactory(new PropertyValueFactory<>("b"));
@@ -233,7 +233,7 @@ public class SuaCauHoiController implements Initializable {
                 txtD.setText(questionList.getD());
                 txtDapAn.setText(questionList.getAnswer());
                 txtName.setText(questionList.getName());
-                
+
             });
         } catch (Exception ex) {
             System.out.println("SQLException: " + ex.getMessage());

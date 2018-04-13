@@ -35,7 +35,6 @@ public class AdminController implements Initializable {
     @FXML
     private JFXButton btnThem, btnEdit, btnUser;
 
-    
     @FXML
     private AnchorPane rootPane;
     @FXML
@@ -46,7 +45,6 @@ public class AdminController implements Initializable {
     private ResultSet rs;
 
     private String firstname, lastname, email;
-    
 
     /**
      * Initializes the controller class.
@@ -77,11 +75,16 @@ public class AdminController implements Initializable {
     private void handleButton(ActionEvent event) throws IOException {
 
         if (event.getSource() == btnThem) {
-
-        } else if (event.getSource() == btnUser) {
+            EnglishAssistantUtil.loadWindow(getClass().
+                    getResource("ThemCauHoi.fxml"), "Add New Question", null);
 
         } else if (event.getSource() == btnEdit) {
+            EnglishAssistantUtil.loadWindow(getClass().
+                    getResource("SuaCauHoi.fxml"), "Edit Question", null);
 
+        } else if (event.getSource() == btnUser) {
+            EnglishAssistantUtil.loadWindow(getClass().
+                    getResource("EditUser.fxml"), "Edit user", null);
         }
 
     }

@@ -32,17 +32,7 @@ public class QuestionList {
         this.answer = answer;
         this.name=name;
     }
-    public QuestionList(String loaicauhoi, String content, String a, String b, String c, String d, String answer,String name) {
-        
-        this.loaicauhoi = loaicauhoi;
-        this.content = content;
-        this.a = a;
-        this.b = b;
-        this.c = c;
-        this.d = d;
-        this.answer = answer;
-        this.name=name;
-    }
+    
 
     /**
      * @return the id

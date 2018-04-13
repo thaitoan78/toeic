@@ -46,7 +46,11 @@ import javafx.util.StringConverter;
 public class EditUserController implements Initializable {
 
     @FXML
-    private TableView<User> tableUser;
+    private JFXTextField txtMauser;
+    @FXML
+    private JFXTextField txtName;
+    @FXML
+    private JFXTextField txtID;
     @FXML
     private JFXTextField txtFirstname;
     @FXML
@@ -54,15 +58,19 @@ public class EditUserController implements Initializable {
     @FXML
     private JFXTextField txtUsername;
     @FXML
-    private JFXComboBox<Role> cmbType;
+    private JFXPasswordField txtPassword;
     @FXML
     private JFXTextField txtEmail;
+
+    @FXML
+    private JFXComboBox<Role> cmbType;
+    @FXML
+    private TableView<User> tableUser;
     @FXML
     private JFXButton btnUpdate;
     @FXML
     private JFXButton btnClear;
-    @FXML
-    private JFXPasswordField txtPassword;
+
     @FXML
     private TableColumn<?, ?> colNo;
     @FXML
@@ -77,44 +85,22 @@ public class EditUserController implements Initializable {
     private TableColumn<?, ?> colEmail;
     @FXML
     private TableColumn<?, ?> colStatus;
+
     private ObservableList<Role> listRole;
     private ObservableList<User> listUser;
+
     private Connection connect;
     private PreparedStatement preS;
     private ResultSet rs;
+
     private String maquyen;
 
     @FXML
-    private JFXTextField txtMauser;
-    @FXML
-    private JFXTextField txtName;
-    @FXML
-    private JFXTextField txtID;
-    @FXML
-    private Label errFirstname;
-    @FXML
-    private Label errLastname;
-    @FXML
-    private Label errEmail;
-    @FXML
-    private Label errUsername;
-    @FXML
-    private Label errPass;
-    @FXML
-    private Label errCombo;
+    private Label errFirstname,errLastname,errEmail,errUsername,errPass,errCombo;
 
     /**
      * Initializes the controller class.
      */
-    public void start(final Stage stage) throws IOException {
-        Parent homeEdit = FXMLLoader.load(getClass().getResource("EditUser.fxml"));
-        Scene homescene = new Scene(homeEdit);
-        homescene.setFill(Color.TRANSPARENT);
-        stage.setTitle("Edit User");
-        stage.setResizable(true);
-        stage.setScene(homescene);
-        stage.show();
-    }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -193,7 +179,6 @@ public class EditUserController implements Initializable {
 
     private void loadColumn() {
         colNo.setCellValueFactory(new PropertyValueFactory<>("userid"));
-        //colMauser.setCellValueFactory(new PropertyValueFactory<>("mauser"));
         colUser.setCellValueFactory(new PropertyValueFactory<>("username"));
         colPass.setCellValueFactory(new PropertyValueFactory<>("pass"));
         colFirst.setCellValueFactory(new PropertyValueFactory<>("firstname"));
@@ -220,8 +205,7 @@ public class EditUserController implements Initializable {
             });
         } catch (Exception ex) {
             System.out.println("SQLException: " + ex.getMessage());
-            //System.out.println("SQLState: " + ex.getSQLState());
-            //System.out.println("VendorError: " + ex.getErrorCode());
+           
         }
 
     }

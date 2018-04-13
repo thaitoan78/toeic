@@ -57,7 +57,6 @@ public class LoaiCauHoiController implements Initializable {
 
     @FXML
     private Label errLoaiCauHoi;
-    private Stage stage;
     @FXML
     private JFXTextField txtTenLoai;
     @FXML
